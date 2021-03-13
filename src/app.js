@@ -103,7 +103,7 @@ App = {
         $newTaskTemplate.find('input')
                         .prop('name', taskId)
                         .prop('checked', taskCompleted)
-                        // .on('click', App.toggleCompleted)
+                        .on('click', App.toggleCompleted)
   
         // Put the task in the correct list
         if (taskCompleted) {
@@ -127,6 +127,8 @@ App = {
       window.location.reload()
     },
   
+    // implement onClick of listitems from template
+    // we can access variable from that template
     toggleCompleted: async (e) => {
       App.setLoading(true)
       const taskId = e.target.name
